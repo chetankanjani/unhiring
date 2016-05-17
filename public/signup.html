@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <title>WELCOME TO UNHIRING</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- load fontawesome -->
+
+
+</head>
+<body>
+<div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1><span class="fa fa-sign-in"></span> Signup</h1>
+
+
+        <form ng-submit="signup()">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" ng-model="user.name" name="name">
+            </div>
+            <div class="form-group">
+                <label>Email Id</label>
+                <input type="email" class="form-control" ng-model="user.email" name="username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" ng-model="user.password" name="password">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" ng-model="user.password1" name="password">
+            </div>
+
+
+            <p ng-show="user.password!=user.password1" class="btn btn-warning btn-lg">Password Don't Match</p>
+
+            <button ng-show="user.password==user.password1" class="btn btn-warning btn-lg">Signup</button>
+        </form>
+
+        <hr>
+
+        <p>Already have an account? <a href="#/login">Login</a></p>
+
+        <p>Or go <a href="/#/">home</a>.</p>
+
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<head>
+    <title>WELCOME TO UNHIRING </title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- load fontawesome -->
+
+</head>
+
+<div ng-controller="ModalDemoCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+
+
+        <div class="modal-header" >
+
+            <h3 class="modal-title">PLEASE ENTER THE FOLLOWING DETAILS</h3>
+        </div>
+
+        <div class="modal-body">
+            <ul>
+                <!--<li ng-repeat="item in items">-->
+                    <!--&lt;!&ndash;<a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>&ndash;&gt;-->
+                <!--</li>-->
+                <!--NAME:<input type="text" ng-model="college.name"> <br>-->
+                <!--DEGREE<input type="text" ng-model="college.degree">-->
+
+                <form>
+                    <div>
+                        <label>COLLEGE NAME : </label>
+                        <input type="text" data-ng-model="item.college" ng-change="collegesearch()" list="collegetitle">
+                    </div>
+
+                </form>
+        </div>
+        <datalist id="collegetitle">
+            <option  data-ng-repeat="ttl in titles" value="{{ttl}}">
+
+        </datalist>
+
+
+        <form>
+            <div>
+                <label>Degree : </label>
+                <input type="text" data-ng-model="item.degree"  ng-change="degreesearch()" list="degreetitle">
+            </div>
+
+        </form>
+        </div>
+        <datalist id="degreetitle">
+            <option  data-ng-repeat="ttl in dtitles" value="{{ttl}}">
+        </datalist>
+
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok(college)">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    <span ng-init="start()"></span>
+
+    <p>hello {{name}}</p>
+    <span ng-if="college" >YOU ARE FROM {{college}},{{degree}}</span>
+</div>
+
